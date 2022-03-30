@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class WishList {
 
     private ArrayList<Wish> wishes = new ArrayList<>();
-    private int wishId;
+    private int wishListId;
     private String name;
     private User wishListOwner;
 
     public WishList(ArrayList<Wish> wishes, int wishId, String name, User wishListOwner) {
         this.wishes = wishes;
-        this.wishId = wishId;
+        this.wishListId = wishId;
         this.name = name;
         this.wishListOwner = wishListOwner;
     }
@@ -24,12 +24,12 @@ public class WishList {
         this.wishes = wishes;
     }
 
-    public int getWishId() {
-        return wishId;
+    public int getWishListId() {
+        return wishListId;
     }
 
-    public void setWishId(int wishId) {
-        this.wishId = wishId;
+    public void setWishListId(int wishListId) {
+        this.wishListId = wishListId;
     }
 
     public String getName() {
