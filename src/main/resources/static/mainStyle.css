@@ -5,6 +5,7 @@
     font-family: "Times New Roman", SansSerif;
 }
 
+
 html{
     height: 100vh;
     width: 100vw;
@@ -38,11 +39,30 @@ body{
     padding-bottom: 2%;
 }
 
+.top-beam {
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: papayawhip;
+    height: auto;
+    width: 100%;
+}
+
+.front-page-middle{
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    width: 80%
+}
+
 /*Form related styling*/
+.front-page-form{
+    height: auto;
+    text-align: left;
+}
+
 .form{
     width:70%;
     align-items: center;
-    justify-content: center;
 }
 
 input{
@@ -82,4 +102,20 @@ input[type=submit]{
 /*Tweats*/
 .tweat{
     padding-bottom: 10%;
+}
+
+.default-background{
+    background-color: rgba(255,255,255,85%);
+}
+
+.keep-right{
+    display: flex;
+    margin-right: 7%;
+    margin-top: 1%;
+    justify-content: left;
+}
+
+.keep-left{
+    display: flex;
+    justify-content: left;
 }

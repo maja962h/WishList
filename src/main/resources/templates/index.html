@@ -1,10 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Front page</title>
+    <title>Front Page</title>
+    <link rel="stylesheet" th:href="@{mainStyle.css}" href="../static/mainStyle.css">
 </head>
-<body>
+
+<body class="default-background">
+
+    <div class="top-beam">
+
+        <div class="keep-left">
+            <img src="../static/gave.png" alt="gave" width="80" height="75">
+            <h1 style="font-size: 70px">U WISH</h1>
+        </div>
+
+
+        <div class="keep-right">
+
+            <a style="font-size: 30px; color: black; text-decoration: none;" href="logIn.html">Log In</a>
+
+        </div>
+</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+<div class="front-page-middle">
+
+    <div class="front-page-form" style="margin-top: 8%">
+
+            <h1 style="font-size: 50px; color: lightblue";>CREATE YOUR VERY<BR>OWN WISH LIST</h1>
+
+        <p style="font-size: 21px; color: lightyellow">
+            With U WISH you have a quick and easy way, to show your
+            <br>
+            loved ones that you are very expensive to have around!
+        </p>
+
+        <br>
+        <br>
+        <a href="signUp.html" style="color: rgba(255,198,230,0.75); font-size: 25px; text-decoration: none;">Get Started Here ➡️</a>
+    </div>
+
+    <div class="front-page-form">
+
+        <img src="../static/gavergaver.png" alt="flere gaver" width="500" height="500">
+
+    </div>
+
+</div>
+
+
 
 </body>
 </html>
