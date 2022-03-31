@@ -1,0 +1,36 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <link rel="stylesheet" th:href="@{mainStyle.css}" href="../static/mainStyle.css">
+</head>
+<body>
+<div class="content">
+    <div class="heading">
+        <h1>Log in</h1>
+        <div th:replace="fragments/generalFooter.html :: footer"></div>
+    </div>
+    <div class="form">
+        <form>
+            <label for="userName">Username</label>
+            <input type="text" id="userName">
+        </form>
+    </div>
+    <div class="form">
+        <form>
+            <label for="passWord">Password</label>
+            <input type="text" id="passWord">
+            <input type="submit" value="Log on">
+            <p>
+                <a href="forgotPassword.html"> Forgot password?? </a>
+            </p>
+            <p>
+                <a href="signUp.html"> Sign up </a>
+            </p>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+

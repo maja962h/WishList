@@ -1,0 +1,34 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <link rel="stylesheet" th:href="@{mainStyle.css}" href="../static/mainStyle.css">
+</head>
+<body>
+<div class="content">
+    <div class="heading">
+        <h1>Sign up</h1>
+    </div>
+    <div class="form">
+        <form>
+            <label for="userName">Username</label>
+            <input type="text" id="userName">
+        </form>
+    </div>
+    <div class="form">
+        <form>
+            <label for="passWord">Password</label>
+            <input type="text" id="passWord">
+            <input type="submit" value="Log on">
+            <p>
+                <a href="forgotPassword.html"> Forgot password?? </a>
+            </p>
+            <p>
+                <a href="signUp.html"> Sign up </a>
+            </p>
+        </form>
+    </div>
+</div>
+</body>
+</html>
