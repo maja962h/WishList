@@ -28,7 +28,7 @@ public class HomeController {
 
     @GetMapping("/wishList")
     public String wishList(){
-        return "wishList";
+        return "createWishlist";
     }
 
     @PostMapping("/createUser")
