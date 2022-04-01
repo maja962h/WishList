@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>View lists</title>
+    <link rel="stylesheet" th:href="@{mainStyle.css}" href="../static/mainStyle.css">
 </head>
 <body>
+<div class="content">
+    <div class="heading">
+        <h1>Add Wish</h1>
+    </div>
+    <div class="form">
+        <form method="POST" action="/updateWishlist">
+            <label for="name">Product name</label>
+            <input type="text" id="name" name="name">
+            <label for="price">Price</label>
+            <input type="text" id="price" name="price">
+            <label for="description">Description/Link</label>
+            <input type="text" id="description" name="description">
+            <input type="submit" value="Add wish">
+        </form>
+    </div>
+
+</div>
 
 </body>
 </html>

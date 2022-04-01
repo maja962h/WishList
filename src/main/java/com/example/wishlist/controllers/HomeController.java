@@ -31,7 +31,7 @@ public class HomeController {
         return "wishList";
     }
 
-    @PostMapping("/test")
+    @PostMapping("/createUser")
     public String test(WebRequest dataFromForm){
 
         String email = dataFromForm.getParameter("email");
@@ -43,7 +43,7 @@ public class HomeController {
         return "redirect:/signUp";
     }
 
-    @PostMapping("/test2")
+    @PostMapping("/createWishlist")
     public String test2(WebRequest dataFromForm){
 
         String name = dataFromForm.getParameter("name");
