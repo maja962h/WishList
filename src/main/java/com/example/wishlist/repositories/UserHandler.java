@@ -1,9 +1,6 @@
 package com.example.wishlist.repositories;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class UserHandler {
 
@@ -14,6 +11,21 @@ public class UserHandler {
 
     public UserHandler(){
         connect();
+    }
+
+    public void createUser(String email, String password, String name){
+        try
+        {
+            stmt = con.createStatement();
+            sqlString = ("INSERT INTO `you_wish`.`Users` (`user_email`, `user_password`, `user_name`) " +
+                    "VALUES ('" + email + "', '" + password + "', '" + name + "')");
+            stmt.executeUpdate(sqlString);
+            System.out.println(sqlString);
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void connect () {

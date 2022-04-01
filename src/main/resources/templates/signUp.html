@@ -10,29 +10,22 @@
     <div class="heading">
         <h1>Sign up</h1>
     </div>
+
     <div class="form">
-        <form>
+        <form method="POST" action="/test">
             <label for="email">Email</label>
-            <input type="text" id="email">
-        </form>
-    </div>
-    <div class="form">
-        <form>
+            <input type="text" id="email" name="email">
             <label for="name">Name</label>
-            <input type="text" id="name">
-        </form>
-    </div>
-    <div class="form">
-        <form>
+            <input type="text" id="name" name="name">
             <label for="passWord">Password</label>
-            <input type="text" id="passWord">
+            <input type="text" id="passWord" name="password">
             <input type="submit" value="Sign up">
             <p> Already a member?
                 <a href="logIn.html"> Log in </a>
             </p>
-
         </form>
     </div>
+
 </div>
 </body>
 </html>
