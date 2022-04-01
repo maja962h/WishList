@@ -28,6 +28,14 @@ public class UserHandler {
         }
     }
 
+    public void updateUser(){
+
+    }
+
+    public void deleteUser(){
+
+    }
+
     public void connect () {
         String url = "jdbc:mysql://localhost:3306/you_wish";
 
