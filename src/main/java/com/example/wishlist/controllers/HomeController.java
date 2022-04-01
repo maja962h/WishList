@@ -33,7 +33,7 @@ public class HomeController {
         String name = dataFromForm.getParameter("name");
         String password = dataFromForm.getParameter("password");
 
-        wishListService.createUser(email, name, password);
+        wishListService.createUser(email, password, name);
 
         return "redirect:/signUp";
     }
