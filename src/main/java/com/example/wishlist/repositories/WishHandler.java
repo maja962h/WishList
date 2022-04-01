@@ -3,8 +3,7 @@ package com.example.wishlist.repositories;
 
 public class WishHandler {
 
-
-    public void addWish(){
+    public void createWish(){
 
     }
 
