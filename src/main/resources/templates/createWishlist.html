@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create wishlist page</title>
+    <link rel="stylesheet" th:href="@{mainStyle.css}" href="../static/mainStyle.css">
+</head>
+<body>
+<div class="content">
+    <div class="heading">
+        <h1>Create a wishlist</h1>
+    </div>
+    <div class="form">
+        <form method="POST" action="/test2">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <input type="submit" value="Create">
+            <p> Just want to see your lists?
+                <a href="updateWishList.html"> View lists </a>
+            </p>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

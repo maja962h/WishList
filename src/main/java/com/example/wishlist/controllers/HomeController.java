@@ -26,6 +26,11 @@ public class HomeController {
         return "signUp";
     }
 
+    @GetMapping("/wishList")
+    public String wishList(){
+        return "wishList";
+    }
+
     @PostMapping("/test")
     public String test(WebRequest dataFromForm){
 
@@ -33,8 +38,20 @@ public class HomeController {
         String name = dataFromForm.getParameter("name");
         String password = dataFromForm.getParameter("password");
 
-        wishListService.createUser(email, name, password);
+        wishListService.createUser(email, password, name);
 
         return "redirect:/signUp";
+    }
+
+    @PostMapping("/test2")
+    public String test2(WebRequest dataFromForm){
+
+        String name = dataFromForm.getParameter("name");
+        String email = dataFromForm.getParameter("email");
+
+
+        wishListService.createWishList(name, email);
+
+        return "redirect:/updateWishList";
     }
 }
