@@ -94,13 +94,17 @@ a{
 
 }
 
+.center{
+    text-align: center;
+    padding-top: 5%;
+}
+
 input[type=submit]{
     width: 30%;
     float:right;
 }
 
-/*Tweats*/
-.tweat{
+.uWish{
     padding-bottom: 10%;
 }
 
