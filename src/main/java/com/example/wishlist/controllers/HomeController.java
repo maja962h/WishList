@@ -31,6 +31,11 @@ public class HomeController {
         return "createWishlist";
     }
 
+    @GetMapping("/updateUser")
+    public String updateUser(){
+        return "updateUser";
+    }
+
     @PostMapping("/createUser")
     public String test(WebRequest dataFromForm){
 
@@ -53,5 +58,16 @@ public class HomeController {
         wishListService.createWishList(name, email);
 
         return "redirect:/updateWishList";
+    }
+
+    @PostMapping("/updateUserName")
+    public String updateUsername(WebRequest dataFromForm){
+
+        String name = dataFromForm.getParameter("name");
+        String email = dataFromForm.getParameter("email");
+
+        wishListService.updateUserName(email, name);
+
+        return "redirect:/updateUser";
     }
 }

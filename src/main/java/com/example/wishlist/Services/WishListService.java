@@ -16,4 +16,8 @@ public class WishListService {
         wishListHandler.createWishList(name, email);
     }
 
+    public void updateUserName(String email, String name){
+        userHandler.updateUserName(email, name);
+    }
+
 }
