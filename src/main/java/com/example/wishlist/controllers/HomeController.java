@@ -70,4 +70,15 @@ public class HomeController {
 
         return "redirect:/updateUser";
     }
+
+    @PostMapping("/updateUserPassword")
+    public String updateUserPassword(WebRequest dataFromForm){
+
+        String password = dataFromForm.getParameter("password");
+        String email = dataFromForm.getParameter("email2");
+
+        wishListService.updateUserPassword(email, password);
+
+        return "redirect:/updateUser";
+    }
 }

@@ -29,11 +29,25 @@ public class UserHandler {
     }
 
     public void updateUserName(String email, String name){
-        //UPDATE `you_wish`.`users` SET `user_name` = 'hejsa' WHERE (`user_email` = 'hej@123.dk');
         try
         {
             stmt = con.createStatement();
             sqlString = ("UPDATE `you_wish`.`Users` SET `user_name` =  '" + name + "' WHERE (`user_email` = '" + email + "')");
+            stmt.executeUpdate(sqlString);
+            System.out.println(sqlString);
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateUserPassword(String email, String password){
+        //UPDATE `you_wish`.`users` SET `user_name` = 'hejsa' WHERE (`user_email` = 'hej@123.dk');
+        try
+        {
+            stmt = con.createStatement();
+            sqlString = ("UPDATE `you_wish`.`Users` SET `user_password` =  '" + password + "' WHERE (`user_email` = '" + email + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
         }

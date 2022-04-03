@@ -20,4 +20,8 @@ public class WishListService {
         userHandler.updateUserName(email, name);
     }
 
+    public void updateUserPassword(String email, String password){
+        userHandler.updateUserPassword(email, password);
+    }
+
 }
