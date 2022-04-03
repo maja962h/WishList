@@ -24,4 +24,8 @@ public class WishListService {
         userHandler.updateUserPassword(email, password);
     }
 
+    public void deleteUser(String email){
+        userHandler.deleteUser(email);
+    }
+
 }

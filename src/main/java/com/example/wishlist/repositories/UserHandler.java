@@ -57,7 +57,19 @@ public class UserHandler {
         }
     }
 
-    public void deleteUser(){
+    public void deleteUser(String email){
+        //DELETE FROM `you_wish`.`users` WHERE (`user_email` = 'niasd');
+        try
+        {
+            stmt = con.createStatement();
+            sqlString = ("DELETE FROM `you_wish`.`Users` WHERE (`user_email` = '" + email + "')");
+            stmt.executeUpdate(sqlString);
+            System.out.println(sqlString);
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
 
     }
 

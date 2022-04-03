@@ -81,4 +81,14 @@ public class HomeController {
 
         return "redirect:/updateUser";
     }
+
+    @PostMapping("/deleteUser")
+    public String deleteUser(WebRequest dataFromForm){
+
+        String email = dataFromForm.getParameter("email3");
+
+        wishListService.deleteUser(email);
+
+        return "redirect:/updateUser";
+    }
 }
