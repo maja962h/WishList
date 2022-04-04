@@ -29,45 +29,37 @@ public class UserHandler {
     }
 
     public void updateUserName(String email, String name){
-        try
-        {
+        try {
             stmt = con.createStatement();
             sqlString = ("UPDATE `you_wish`.`Users` SET `user_name` =  '" + name + "' WHERE (`user_email` = '" + email + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
         }
-        catch (SQLException e)
-        {
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void updateUserPassword(String email, String password){
-        //UPDATE `you_wish`.`users` SET `user_name` = 'hejsa' WHERE (`user_email` = 'hej@123.dk');
-        try
-        {
+        try {
             stmt = con.createStatement();
             sqlString = ("UPDATE `you_wish`.`Users` SET `user_password` =  '" + password + "' WHERE (`user_email` = '" + email + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
         }
-        catch (SQLException e)
-        {
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void deleteUser(String email){
-        //DELETE FROM `you_wish`.`users` WHERE (`user_email` = 'niasd');
-        try
-        {
+        try {
             stmt = con.createStatement();
             sqlString = ("DELETE FROM `you_wish`.`Users` WHERE (`user_email` = '" + email + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
         }
-        catch (SQLException e)
-        {
+        catch (SQLException e) {
             e.printStackTrace();
         }
 
