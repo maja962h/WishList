@@ -26,6 +26,11 @@ public class HomeController {
         return "signUp";
     }
 
+    @GetMapping("/forgotPassword")
+    public String forgotPassword(){
+        return "forgotPassword";
+    }
+
     @GetMapping("/wishList")
     public String wishList(){
         return "createWishlist";
