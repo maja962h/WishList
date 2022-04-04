@@ -31,7 +31,7 @@ public class HomeController {
         return "forgotPassword";
     }
 
-    @GetMapping("/wishList")
+    @GetMapping("/createWishlist")
     public String wishList(){
         return "createWishlist";
     }
@@ -39,6 +39,11 @@ public class HomeController {
     @GetMapping("/updateUser")
     public String updateUser(){
         return "updateUser";
+    }
+
+    @GetMapping("/userOptions")
+    public String userOptions(){
+        return "userOptions";
     }
 
     @PostMapping("/createUser")
@@ -50,7 +55,7 @@ public class HomeController {
 
         wishListService.createUser(email, password, name);
 
-        return "redirect:/signUp";
+        return "redirect:/userOptions";
     }
 
     @PostMapping("/createWishlist")

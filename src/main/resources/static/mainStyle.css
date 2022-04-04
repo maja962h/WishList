@@ -107,6 +107,10 @@ a{
     padding-top: 5%;
 }
 
+.userOptions{
+    font-size: 25px;
+}
+
 input[type=submit]{
     width: 30%;
     float:right;
