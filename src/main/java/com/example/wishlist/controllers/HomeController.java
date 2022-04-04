@@ -46,6 +46,11 @@ public class HomeController {
         return "userOptions";
     }
 
+    @GetMapping("/deleteWishlist")
+    public String deleteWishlist(){
+        return "deleteWishlist";
+    }
+
     @PostMapping("/createUser")
     public String test(WebRequest dataFromForm){
 
@@ -100,5 +105,15 @@ public class HomeController {
         wishListService.deleteUser(email);
 
         return "redirect:/updateUser";
+    }
+
+    @PostMapping("/deleteWishlist")
+    public String deleteWishlist(WebRequest dataFromForm){
+
+        int wishlistID = Integer.parseInt(dataFromForm.getParameter("wishlistID"));
+
+        wishListService.deleteWishlist(wishlistID);
+
+        return "redirect:/userOptions";
     }
 }

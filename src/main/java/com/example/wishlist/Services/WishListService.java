@@ -28,4 +28,8 @@ public class WishListService {
         userHandler.deleteUser(email);
     }
 
+    public void deleteWishlist(int wishlistID){
+        wishListHandler.deleteWishList(wishlistID);
+    }
+
 }

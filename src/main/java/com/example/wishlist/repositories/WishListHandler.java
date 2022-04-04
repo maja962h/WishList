@@ -41,7 +41,16 @@ public class WishListHandler {
 
     }
 
-    public void deleteWishList(){
+    public void deleteWishList(int wishListID){
+        try {
+            stmt = con.createStatement();
+            sqlString = ("DELETE FROM `you_wish`.`wishList` WHERE (`wishList_id` = '" + wishListID + "')");
+            stmt.executeUpdate(sqlString);
+            System.out.println(sqlString);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 

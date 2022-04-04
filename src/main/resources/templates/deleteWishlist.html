@@ -1,0 +1,23 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete wishlist</title>
+    <link rel="stylesheet" th:href="@{mainStyle.css}" href="../static/mainStyle.css">
+</head>
+<body>
+<div class="content">
+    <div class="heading">
+        <h1>Delete Wishlist</h1>
+    </div>
+
+    <div class="form">
+        <form method="POST" action="/deleteWishlist">
+            <label for="wishlistID">Insert your wishlist ID</label>
+            <input type="text" id="wishlistID" name="wishlistID">
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+</div>
+</body>
+</html>

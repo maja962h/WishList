@@ -96,6 +96,10 @@ input{
     padding-bottom: 2%;
 }
 
+#wishlistID{
+    padding-bottom: 2%;
+}
+
 a{
     color: black;
     line-height: 1.6;
