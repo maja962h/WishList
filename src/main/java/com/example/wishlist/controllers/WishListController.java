@@ -12,7 +12,7 @@ import org.springframework.web.context.request.WebRequest;
 public class WishListController {
     WishListService wishListService = new WishListService();
 
-    @GetMapping("/getOneUsersWishlist")
+    @GetMapping("/viewWishlist")
     public String getSingleEmail(Model m){
         //String email = dataFromForm.getParameter("email");
         m.addAttribute("singleWishlist", wishListService.fetchOneUsersWishlist());
