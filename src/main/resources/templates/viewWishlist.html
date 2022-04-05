@@ -1,0 +1,22 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View wishlist</title>
+    <link rel="stylesheet" th:href="@{mainStyle.css}" href="../static/mainStyle.css">
+</head>
+<body>
+<div class="content">
+    <div class="heading">
+        <h1>View your Wish Lists</h1>
+    </div>
+    <div class="center">
+        <h3>
+            <p th:each="email : ${singleWishlist}">
+                <span th:text="${email}"></span>
+            </p>
+        </h3>
+    </div>
+</div>
+</body>
+</html>

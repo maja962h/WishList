@@ -1,6 +1,7 @@
 package com.example.wishlist.repositories;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class WishListHandler {
 
@@ -54,11 +55,39 @@ public class WishListHandler {
 
     }
 
+    public ArrayList<String> fetchOneUsersWishlist(){
+        ArrayList<String> allWishlists = new ArrayList<>();
+        String id = "";
+        String email = "";
+        String name = "";
+
+        try {
+            stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+            sqlString = "SELECT * FROM wishList";
+                    //"SELECT `user_email`, `wishList_id` FROM `WishList` WHERE (`user_email` = '" + email + "')";
+
+            ResultSet allEmailResultSet = stmt.executeQuery(sqlString);
+            while(allEmailResultSet.next()){
+                id = allEmailResultSet.getString(1);
+                name = allEmailResultSet.getString(2);
+                email = allEmailResultSet.getString(3);
+                allWishlists.add(id);
+                allWishlists.add(name);
+                allWishlists.add(email);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return allWishlists;
+    }
+
     public void connect () {
         String url = "jdbc:mysql://localhost:3306/you_wish";
 
         try {
-            con = DriverManager.getConnection(url,"root","test");
+            con = DriverManager.getConnection(url,"root","testtest");
         }
         catch(Exception e) {
             System.out.println("There is no connection to the database");

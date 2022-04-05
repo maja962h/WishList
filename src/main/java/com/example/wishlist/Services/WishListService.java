@@ -1,7 +1,8 @@
 package com.example.wishlist.Services;
 
-import com.example.wishlist.repositories.UserHandler;
 import com.example.wishlist.repositories.WishListHandler;
+
+import java.util.ArrayList;
 
 public class WishListService {
 
@@ -16,6 +17,10 @@ public class WishListService {
 
     public void deleteWishlist(int wishlistID){
         wishListHandler.deleteWishList(wishlistID);
+    }
+
+    public ArrayList<String> fetchOneUsersWishlist (){
+        return wishListHandler.fetchOneUsersWishlist();
     }
 
 }
