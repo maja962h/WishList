@@ -5,15 +5,12 @@ import java.util.ArrayList;
 public class WishList {
 
     private ArrayList<Wish> wishes = new ArrayList<>();
-    private int wishListId;
     private String name;
-    private User wishListOwner;
+    private String userEmail;
 
-    public WishList(ArrayList<Wish> wishes, int wishId, String name, User wishListOwner) {
-        this.wishes = wishes;
-        this.wishListId = wishId;
+    public WishList(String name, String userEmail) {
         this.name = name;
-        this.wishListOwner = wishListOwner;
+        this.userEmail = userEmail;
     }
 
     public ArrayList<Wish> getWishes() {
@@ -24,13 +21,6 @@ public class WishList {
         this.wishes = wishes;
     }
 
-    public int getWishListId() {
-        return wishListId;
-    }
-
-    public void setWishListId(int wishListId) {
-        this.wishListId = wishListId;
-    }
 
     public String getName() {
         return name;
@@ -40,11 +30,7 @@ public class WishList {
         this.name = name;
     }
 
-    public User getWishListOwner() {
-        return wishListOwner;
-    }
-
-    public void setWishListOwner(User wishListOwner) {
-        this.wishListOwner = wishListOwner;
+    public String getUserEmail() {
+        return userEmail;
     }
 }

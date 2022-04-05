@@ -14,6 +14,7 @@ public class HomeController {
 
     @GetMapping("/logIn")
     public String logIn(){
+
         return "logIn";
     }
 
@@ -45,6 +46,11 @@ public class HomeController {
     @GetMapping("/deleteWishlist")
     public String deleteWishlist(){
         return "deleteWishlist";
+    }
+
+    @GetMapping("/addWish")
+    public String addWish(){
+        return "addWish";
     }
 
 }

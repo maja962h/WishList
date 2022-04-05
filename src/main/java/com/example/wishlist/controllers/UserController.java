@@ -1,6 +1,7 @@
 package com.example.wishlist.controllers;
 
 import com.example.wishlist.Services.UserService;
+import com.example.wishlist.models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.context.request.WebRequest;
@@ -10,13 +11,15 @@ public class UserController {
     UserService userService = new UserService();
 
     @PostMapping("/createUser")
-    public String test(WebRequest dataFromForm){
+    public String userCreation(WebRequest dataFromForm){
 
         String email = dataFromForm.getParameter("email");
         String name = dataFromForm.getParameter("name");
         String password = dataFromForm.getParameter("password");
 
-        userService.createUser(email, password, name);
+        User tempUser = new User(email, password ,name);
+
+        userService.createUser(tempUser);
 
         return "redirect:/userOptions";
     }

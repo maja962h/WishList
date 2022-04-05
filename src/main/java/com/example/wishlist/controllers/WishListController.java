@@ -1,6 +1,7 @@
 package com.example.wishlist.controllers;
 
 import com.example.wishlist.Services.WishListService;
+import com.example.wishlist.models.WishList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,15 +20,16 @@ public class WishListController {
     }
 
     @PostMapping("/createWishlist")
-    public String test2(WebRequest dataFromForm){
+    public String wishListCreation(WebRequest dataFromForm){
 
         String name = dataFromForm.getParameter("name");
         String email = dataFromForm.getParameter("email");
 
+        WishList tempWishList = new WishList(name, email);
 
-        wishListService.createWishList(name, email);
+        wishListService.createWishList(tempWishList);
 
-        return "redirect:/updateWishList";
+        return "redirect:/addWish";
     }
 
     @PostMapping("/deleteWishlist")

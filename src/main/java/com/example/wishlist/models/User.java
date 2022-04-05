@@ -2,16 +2,14 @@ package com.example.wishlist.models;
 
 public class User {
 
-    private int Id;
     private String password;
     private String email;
     private String name;
 
-    public User(int id, String password, String email, String name) {
-        Id = id;
-        this.password = password;
+    public User(String email, String password, String name) {
         this.email = email;
         this.name = name;
+        this.password = password;
     }
 
     public String getName() {
@@ -20,14 +18,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
     }
 
     public String getPassword() {

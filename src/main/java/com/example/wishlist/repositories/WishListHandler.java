@@ -1,5 +1,7 @@
 package com.example.wishlist.repositories;
 
+import com.example.wishlist.models.WishList;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -14,7 +16,9 @@ public class WishListHandler {
         connect();
     }
 
-    public void createWishList(String name, String email){
+    public void createWishList(WishList wishList){
+        String name = wishList.getName();
+        String email = wishList.getUserEmail();
 
         try
         {

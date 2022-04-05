@@ -1,5 +1,7 @@
 package com.example.wishlist.repositories;
 
+import com.example.wishlist.models.User;
+
 import java.sql.*;
 
 public class UserHandler {
@@ -13,7 +15,12 @@ public class UserHandler {
         connect();
     }
 
-    public void createUser(String email, String password, String name){
+    public void createUser(User user){
+        String email = user.getEmail();
+        String name = user.getName();
+        String password = user.getPassword();
+
+
         try
         {
             stmt = con.createStatement();
@@ -63,6 +70,28 @@ public class UserHandler {
             e.printStackTrace();
         }
 
+    }
+
+    //TODO: verify user input, by comparing to database data.
+    // will be used for login
+    public boolean verifyUserInformation(String email, String password){
+        boolean isAMatch = false;
+
+        try{
+            stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            sqlString = ("SELECT `user_email`, `user_password` FROM `users` WHERE (user_email = '?', user_password = '?'");
+            stmt.executeQuery(sqlString);
+
+
+
+
+
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return true;
     }
 
     public void connect () {

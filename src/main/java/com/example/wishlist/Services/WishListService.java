@@ -1,5 +1,7 @@
 package com.example.wishlist.Services;
 
+import com.example.wishlist.models.WishList;
+import com.example.wishlist.repositories.UserHandler;
 import com.example.wishlist.repositories.WishListHandler;
 
 import java.util.ArrayList;
@@ -10,8 +12,8 @@ public class WishListService {
     WishListHandler wishListHandler = new WishListHandler();
 
 
-    public void createWishList(String name, String email){
-        wishListHandler.createWishList(name, email);
+    public void createWishList(WishList wishList){
+        wishListHandler.createWishList(wishList);
     }
 
 
@@ -20,7 +22,9 @@ public class WishListService {
     }
 
     public ArrayList<String> fetchOneUsersWishlist (){
+
         return wishListHandler.fetchOneUsersWishlist();
+
     }
 
 }

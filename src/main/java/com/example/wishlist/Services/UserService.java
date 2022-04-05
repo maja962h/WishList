@@ -1,13 +1,14 @@
 package com.example.wishlist.Services;
 
+import com.example.wishlist.models.User;
 import com.example.wishlist.repositories.UserHandler;
 
 public class UserService {
 
     UserHandler userHandler = new UserHandler();
 
-    public void createUser(String email, String password, String name){
-        userHandler.createUser(email, password, name);
+    public void createUser(User user){
+        userHandler.createUser(user);
     }
 
     public void updateUserName(String email, String name){
