@@ -7,8 +7,10 @@ public class WishList {
     private ArrayList<Wish> wishes = new ArrayList<>();
     private String name;
     private String userEmail;
+    private int Id;
 
-    public WishList(String name, String userEmail) {
+    public WishList(int id, String name, String userEmail) {
+        this.Id = id;
         this.name = name;
         this.userEmail = userEmail;
     }
