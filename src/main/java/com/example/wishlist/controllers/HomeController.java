@@ -1,5 +1,6 @@
 package com.example.wishlist.controllers;
 
+import com.example.wishlist.Services.UserService;
 import com.example.wishlist.Services.WishListService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +9,7 @@ import org.springframework.web.context.request.WebRequest;
 
 @Controller
 public class HomeController {
-
+    UserService userService = new UserService();
     WishListService wishListService = new WishListService();
 
     @GetMapping("/")
@@ -58,7 +59,7 @@ public class HomeController {
         String name = dataFromForm.getParameter("name");
         String password = dataFromForm.getParameter("password");
 
-        wishListService.createUser(email, password, name);
+        userService.createUser(email, password, name);
 
         return "redirect:/userOptions";
     }
@@ -81,7 +82,7 @@ public class HomeController {
         String name = dataFromForm.getParameter("name");
         String email = dataFromForm.getParameter("email");
 
-        wishListService.updateUserName(email, name);
+        userService.updateUserName(email, name);
 
         return "redirect:/updateUser";
     }
@@ -92,7 +93,7 @@ public class HomeController {
         String password = dataFromForm.getParameter("password");
         String email = dataFromForm.getParameter("email2");
 
-        wishListService.updateUserPassword(email, password);
+        userService.updateUserPassword(email, password);
 
         return "redirect:/updateUser";
     }
@@ -102,7 +103,7 @@ public class HomeController {
 
         String email = dataFromForm.getParameter("email3");
 
-        wishListService.deleteUser(email);
+        userService.deleteUser(email);
 
         return "redirect:/updateUser";
     }

@@ -69,7 +69,7 @@ public class UserHandler {
         String url = "jdbc:mysql://localhost:3306/you_wish";
 
         try {
-            con = DriverManager.getConnection(url,"root","testtest");
+            con = DriverManager.getConnection(url,"root","test");
         }
         catch(Exception e) {
             System.out.println("There is no connection to the database");
