@@ -20,7 +20,6 @@ public class UserHandler {
         String name = user.getName();
         String password = user.getPassword();
 
-
         try
         {
             stmt = con.createStatement();
@@ -74,31 +73,33 @@ public class UserHandler {
 
     //TODO: verify user input, by comparing to database data.
     // will be used for login
-    public boolean verifyUserInformation(String email, String password){
+    public boolean validateLoginInformation(String email, String password){
         boolean isAMatch = false;
+
 
         try{
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            sqlString = ("SELECT `user_email`, `user_password` FROM `users` WHERE (user_email = '?', user_password = '?'");
-            stmt.executeQuery(sqlString);
+            String sqlString = "SELECT * FROM users WHERE `user_email`= '" + email + "' AND `user_password`='" + password + "';";
+            ResultSet rsVerify = stmt.executeQuery(sqlString);
 
-
-
-
-
+            while (rsVerify.next()) {
+                if(password.equals(rsVerify.getString("user_password")) && email.equals(rsVerify.getString("user_email"))){
+                    isAMatch = true;
+                }
+            }
 
         } catch (SQLException e){
             e.printStackTrace();
         }
 
-        return true;
+        return isAMatch;
     }
 
     public void connect () {
         String url = "jdbc:mysql://localhost:3306/you_wish";
 
         try {
-            con = DriverManager.getConnection(url,"root","testtest");
+            con = DriverManager.getConnection(url,"root","test");
         }
         catch(Exception e) {
             System.out.println("There is no connection to the database");

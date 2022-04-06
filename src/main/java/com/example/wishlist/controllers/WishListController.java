@@ -25,7 +25,6 @@ public class WishListController {
     @PostMapping("/createWishlist")
     public String wishListCreation(WebRequest dataFromForm){
 
-
         int wishlistID = -1;
         String name = dataFromForm.getParameter("name");
         String email = dataFromForm.getParameter("email");

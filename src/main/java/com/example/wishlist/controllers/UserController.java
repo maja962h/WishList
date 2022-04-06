@@ -10,6 +10,18 @@ import org.springframework.web.context.request.WebRequest;
 public class UserController {
     UserService userService = new UserService();
 
+    @PostMapping("/logOn")
+    public String logOn(WebRequest dataFromForm){
+        String email = dataFromForm.getParameter("email");
+        String password = dataFromForm.getParameter("password");
+
+        if(userService.validateLogin(email, password) == true){
+            return "redirect:/userOptions";
+        }
+        return "redirect:/logIn";
+    }
+
+
     @PostMapping("/createUser")
     public String userCreation(WebRequest dataFromForm){
 

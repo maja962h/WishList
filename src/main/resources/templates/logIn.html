@@ -12,23 +12,14 @@
         <div th:replace="fragments/generalFooter.html :: footer"></div>
     </div>
     <div class="form">
-        <form>
+        <form method="POST" action="/logOn">
             <label for="email">Email</label>
-            <input type="text" id="email">
+            <input type="text" id="email" name="email">
+            <label for="passWord">Password</label>
+            <input type="text" id="passWord" name="password">
+            <input type="submit" value="Log in">
         </form>
     </div>
-    <div class="form">
-        <form>
-            <label for="passWord">Password</label>
-            <input type="text" id="passWord">
-            <input type="submit" value="Log on">
-            <p>
-                <a href="/forgotPassword"> Forgot password? </a>
-            </p>
-            <p>
-                <a href="signUp"> Sign up </a>
-            </p>
-        </form>
     </div>
 </div>
 </body>
