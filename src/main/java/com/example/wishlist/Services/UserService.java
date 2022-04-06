@@ -23,11 +23,8 @@ public class UserService {
         userHandler.deleteUser(email);
     }
 
-    public String validateLogin(String email, String password){
-        if(userHandler.validateLoginInformation(email, password) == true){
-            return "redirect:/userOptions";
-        }
-        return "redirect:/logIn";
+    public boolean validateLogin(String email, String password){
+        return userHandler.validateLoginInformation(email, password);
     }
 
 }
