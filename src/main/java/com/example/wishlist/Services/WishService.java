@@ -10,4 +10,8 @@ public class WishService {
     public void createWish(Wish wish){
         wishHandler.createWish(wish);
     }
+
+    public void deleteWish(int wishID){
+        wishHandler.deleteWish(wishID);
+    }
 }

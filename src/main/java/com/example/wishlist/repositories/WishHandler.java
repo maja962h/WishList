@@ -40,7 +40,16 @@ public class WishHandler {
 
     }
 
-    public void deleteWish(){
+    public void deleteWish(int wishID){
+        try {
+            stmt = con.createStatement();
+            sqlString = ("DELETE FROM `you_wish`.`wish` WHERE (`wish_id` = '" + wishID + "')");
+            stmt.executeUpdate(sqlString);
+            System.out.println(sqlString);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 

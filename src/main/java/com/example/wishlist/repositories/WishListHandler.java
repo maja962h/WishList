@@ -34,10 +34,6 @@ public class WishListHandler {
         }
     }
 
-    public void addWish(){
-
-    }
-
     public void showWishList(){
 
     }
