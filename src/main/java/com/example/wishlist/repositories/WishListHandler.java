@@ -91,7 +91,7 @@ public class WishListHandler {
         String url = "jdbc:mysql://localhost:3306/you_wish";
 
         try {
-            con = DriverManager.getConnection(url,"root","test");
+            con = DriverManager.getConnection(url,"root","testtest");
         }
         catch(Exception e) {
             System.out.println("There is no connection to the database");
