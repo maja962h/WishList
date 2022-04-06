@@ -14,4 +14,8 @@ public class WishService {
     public void deleteWish(int wishID){
         wishHandler.deleteWish(wishID);
     }
+
+    public void updateWishName(String name, int wishID){
+        wishHandler.updateWishName(name, wishID);
+    }
 }

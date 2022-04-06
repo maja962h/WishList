@@ -51,6 +51,11 @@ public class HomeController {
         return "removeWish";
     }
 
+    @GetMapping("/editWish")
+    public String updateWish(){
+        return "editWish";
+    }
+
     @GetMapping("/addWish")
     public String addWish(){
         return "addWish";
