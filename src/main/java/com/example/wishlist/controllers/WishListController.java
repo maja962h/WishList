@@ -15,12 +15,15 @@ public class WishListController {
     WishListService wishListService = new WishListService();
     WishService wishService = new WishService();
 
+
+
     @GetMapping("/viewWishlist")
-    public String getSingleEmail(Model m){
-        //String email = dataFromForm.getParameter("email");
-        m.addAttribute("singleWishlist", wishListService.fetchOneUsersWishlist());
+    public String getSingleEmail(Model m, WebRequest dataFromForm){
+        String email = dataFromForm.getParameter("email");
+        System.out.println(m.addAttribute("singleWishlist", wishListService.fetchOneUsersWishlist(email)));
         return "viewWishlist";
     }
+
 
     @PostMapping("/createWishlist")
     public String wishListCreation(WebRequest dataFromForm){
