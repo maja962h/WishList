@@ -21,9 +21,9 @@ public class WishListService {
         wishListHandler.deleteWishList(wishlistID);
     }
 
-    public ArrayList<String> fetchOneUsersWishlist (){
+    public ArrayList<String> fetchOneUsersWishlist (String email){
 
-        return wishListHandler.fetchOneUsersWishlist();
+        return wishListHandler.fetchOneUsersWishlist(email);
 
     }
 

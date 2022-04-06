@@ -59,17 +59,15 @@ public class WishListHandler {
 
     }
 
-    public ArrayList<String> fetchOneUsersWishlist(){
+    public ArrayList<String> fetchOneUsersWishlist(String email){
         ArrayList<String> allWishlists = new ArrayList<>();
         String id = "";
-        String email = "";
         String name = "";
 
         try {
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-            sqlString = "SELECT * FROM wishList";
-                    //"SELECT `user_email`, `wishList_id` FROM `WishList` WHERE (`user_email` = '" + email + "')";
+            sqlString = "SELECT `user_email`, `wishList_id` FROM `WishList` WHERE (`user_email` = '" + email + "')";
 
             ResultSet allEmailResultSet = stmt.executeQuery(sqlString);
             while(allEmailResultSet.next()){
