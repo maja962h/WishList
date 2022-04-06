@@ -76,12 +76,23 @@ public class WishListController {
     }
 
     @PostMapping("/updateWishName")
-    public String updateUsername(WebRequest dataFromForm){
+    public String updateWishName(WebRequest dataFromForm){
 
         String name = dataFromForm.getParameter("name");
         int wishId = Integer.parseInt(dataFromForm.getParameter("wishID"));
 
         wishService.updateWishName(name, wishId);
+
+        return "redirect:/editWish";
+    }
+
+    @PostMapping("/updateWishDescription")
+    public String updateWishDescription(WebRequest dataFromForm){
+
+        String description = dataFromForm.getParameter("wishDescription");
+        int wishId = Integer.parseInt(dataFromForm.getParameter("wishID2"));
+
+        wishService.updateWishDescription(description, wishId);
 
         return "redirect:/editWish";
     }
