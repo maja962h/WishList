@@ -1,6 +1,8 @@
 package com.example.wishlist.controllers;
 
 import com.example.wishlist.Services.WishListService;
+import com.example.wishlist.Services.WishService;
+import com.example.wishlist.models.Wish;
 import com.example.wishlist.models.WishList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.context.request.WebRequest;
 @Controller
 public class WishListController {
     WishListService wishListService = new WishListService();
+    WishService wishService = new WishService();
 
     @GetMapping("/viewWishlist")
     public String getSingleEmail(Model m){
@@ -42,5 +45,21 @@ public class WishListController {
         wishListService.deleteWishlist(wishlistID);
 
         return "redirect:/userOptions";
+    }
+
+    @PostMapping("/addWish")
+    public String createWish(WebRequest dataFromForm) {
+
+        String description = dataFromForm.getParameter("description");
+        String name = dataFromForm.getParameter("name");
+        int price = Integer.parseInt(dataFromForm.getParameter("price"));
+        int wishListId = Integer.parseInt(dataFromForm.getParameter("wishlistID"));
+
+        Wish tempWish = new Wish(name, price, description, wishListId);
+
+
+        wishService.createWish(tempWish);
+
+        return "redirect:/addWish";
     }
 }
