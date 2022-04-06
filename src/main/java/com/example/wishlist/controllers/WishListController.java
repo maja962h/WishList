@@ -96,4 +96,15 @@ public class WishListController {
 
         return "redirect:/editWish";
     }
+
+    @PostMapping("/updateWishPrice")
+    public String updateWishPrice(WebRequest dataFromForm){
+
+        int price = Integer.parseInt(dataFromForm.getParameter("wishPrice"));
+        int wishId = Integer.parseInt(dataFromForm.getParameter("wishID3"));
+
+        wishService.updateWishPrice(price, wishId);
+
+        return "redirect:/editWish";
+    }
 }

@@ -62,6 +62,19 @@ public class WishHandler {
 
     }
 
+    public void updateWishPrice(int price, int wishId){
+        try {
+            stmt = con.createStatement();
+            sqlString = ("UPDATE `you_wish`.`wish` SET `wish_price` =  '" + price + "' WHERE (`wish_id` = '" + wishId + "')");
+            stmt.executeUpdate(sqlString);
+            System.out.println(sqlString);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void deleteWish(int wishID){
         try {
             stmt = con.createStatement();

@@ -22,4 +22,8 @@ public class WishService {
     public void updateWishDescription(String description, int wishID){
         wishHandler.updateWishDescription(description, wishID);
     }
+
+    public void updateWishPrice(int price, int wishID){
+        wishHandler.updateWishPrice(price, wishID);
+    }
 }

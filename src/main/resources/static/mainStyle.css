@@ -116,6 +116,10 @@ input{
     padding-bottom: 2%;
 }
 
+#wishPrice{
+    padding-bottom: 2%;
+}
+
 a{
     color: black;
     line-height: 1.6;
