@@ -1,0 +1,25 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update WishList</title>
+    <link rel="stylesheet" th:href="@{mainStyle.css}" href="../static/mainStyle.css">
+</head>
+<body>
+<div class="content">
+    <div class="heading">
+        <h1>Update Wishlist Information</h1>
+    </div>
+
+    <div class="form">
+        <form method="POST" action="/updateWishListName">
+            <label for="wishlistID">Insert wishlist ID</label>
+            <input type="text" id="wishlistID" name="wishlistID">
+            <label for="name">Insert new wishlist name</label>
+            <input type="text" id="name" name="name">
+            <input type="submit" value="Update name">
+        </form>
+    </div>
+</div>
+</body>
+</html>

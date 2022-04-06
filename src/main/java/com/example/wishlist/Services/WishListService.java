@@ -21,6 +21,10 @@ public class WishListService {
         wishListHandler.deleteWishList(wishlistID);
     }
 
+    public void updateWishlistName(String name, int wishlistID){
+        wishListHandler.updateWishListName(name, wishlistID);
+    }
+
     public ArrayList<String> fetchOneUsersWishlist (String email){
 
         return wishListHandler.fetchOneUsersWishlist(email);

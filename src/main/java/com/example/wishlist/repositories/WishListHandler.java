@@ -34,12 +34,16 @@ public class WishListHandler {
         }
     }
 
-    public void showWishList(){
-
-    }
-
-    public void updateWishList(){
-
+    public void updateWishListName(String name, int wishListId){
+        try {
+            stmt = con.createStatement();
+            sqlString = ("UPDATE `you_wish`.`wishList` SET `wishList_name` =  '" + name + "' WHERE (`wishList_id` = '" + wishListId + "')");
+            stmt.executeUpdate(sqlString);
+            System.out.println(sqlString);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void deleteWishList(int wishListID){
