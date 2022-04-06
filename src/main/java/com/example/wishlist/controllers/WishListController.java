@@ -64,4 +64,14 @@ public class WishListController {
 
         return "redirect:/addWish";
     }
+
+    @PostMapping("/removeWish")
+    public String deleteWish(WebRequest dataFromForm){
+
+        int wishID = Integer.parseInt(dataFromForm.getParameter("wishID"));
+
+        wishService.deleteWish(wishID);
+
+        return "redirect:/userOptions";
+    }
 }

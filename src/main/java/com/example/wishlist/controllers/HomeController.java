@@ -46,6 +46,11 @@ public class HomeController {
         return "deleteWishlist";
     }
 
+    @GetMapping("/removeWish")
+    public String deleteWish(){
+        return "removeWish";
+    }
+
     @GetMapping("/addWish")
     public String addWish(){
         return "addWish";
