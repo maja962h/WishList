@@ -12,13 +12,11 @@ public class UserController {
 
     @PostMapping("/logOn")
     public String logOn(WebRequest dataFromForm){
+
         String email = dataFromForm.getParameter("email");
         String password = dataFromForm.getParameter("password");
 
-        if(userService.validateLogin(email, password) == true){
-            return "redirect:/userOptions";
-        }
-        return "redirect:/logIn";
+        return userService.validateLogin(email, password);
     }
 
 
