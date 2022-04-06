@@ -71,7 +71,7 @@ public class UserHandler {
 
     }
 
-    //TODO: verify user input, by comparing to database data.
+
     // will be used for login
     public boolean validateLoginInformation(String email, String password){
         boolean isAMatch = false;
