@@ -96,10 +96,15 @@ public class UserHandler {
     }
 
     public void connect () {
-        String url = "jdbc:mysql://localhost:3306/you_wish";
+        String url = "jdbc:mysql://ilzyz0heng1bygi8.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/vkeg9sp1dznzifg5";
+        //mysql://username:password@URL:3306/databaseNavn
+        //kun lave tables, ikke schema
+        //JDBC:mysql://URL:3306/databaseNavn
+        //mysql://qfaq4ga0w47q0kof:fubkr4yeaamcpzrn@ilzyz0heng1bygi8.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/vkeg9sp1dznzifg5
+
 
         try {
-            con = DriverManager.getConnection(url,"root","testtest");
+            con = DriverManager.getConnection(url,"qfaq4ga0w47q0kof","fubkr4yeaamcpzrn");
         }
         catch(Exception e) {
             System.out.println("There is no connection to the database");
