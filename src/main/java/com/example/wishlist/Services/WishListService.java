@@ -20,7 +20,7 @@ public class WishListService {
         wishListHandler.updateWishListName(name, wishlistID);
     }
 
-    public ArrayList<String> fetchOneUsersWishlist (String email){
-        return wishListHandler.fetchOneUsersWishlist(email);
+    public ArrayList<WishList> fetchOneUsersWishlist (){
+        return wishListHandler.fetchOneUsersWishlist();
     }
 }

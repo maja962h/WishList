@@ -14,9 +14,8 @@ public class WishListController {
     private WishListService wishListService = new WishListService();
 
     @GetMapping("/viewWishlist")
-    public String getSingleEmail(Model m, WebRequest dataFromForm){
-        String email = dataFromForm.getParameter("email");
-        System.out.println(m.addAttribute("singleWishlist", wishListService.fetchOneUsersWishlist(email)));
+    public String getSingleEmail(Model m){
+        System.out.println(m.addAttribute("singleWishlist", wishListService.fetchOneUsersWishlist()));
         return "viewWishlist";
     }
 

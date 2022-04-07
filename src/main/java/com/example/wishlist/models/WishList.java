@@ -23,4 +23,9 @@ public class WishList {
     public String getUserEmail() {
         return userEmail;
     }
+
+    @Override
+    public String toString() {
+        return "Wishlist id = " + id + " <> " + name + " <> " + userEmail;
+    }
 }
