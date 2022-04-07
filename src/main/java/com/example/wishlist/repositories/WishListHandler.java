@@ -67,7 +67,7 @@ public class WishListHandler {
         try {
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-            sqlString = "SELECT `user_email`, `wishList_id` FROM `WishList` WHERE (`user_email` = '" + email + "')";
+            sqlString = "SELECT `user_email`, `wishlist_id` FROM `Wishlist` WHERE (`user_email` = '" + email + "')";
 
             ResultSet allEmailResultSet = stmt.executeQuery(sqlString);
             while(allEmailResultSet.next()){
@@ -91,7 +91,6 @@ public class WishListHandler {
         //kun lave tables, ikke schema
         //JDBC:mysql://URL:3306/databaseNavn
         //mysql://qfaq4ga0w47q0kof:fubkr4yeaamcpzrn@ilzyz0heng1bygi8.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/vkeg9sp1dznzifg5
-
 
         try {
             con = DriverManager.getConnection(url,"qfaq4ga0w47q0kof","fubkr4yeaamcpzrn");
