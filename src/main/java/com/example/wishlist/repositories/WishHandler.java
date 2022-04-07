@@ -1,6 +1,5 @@
 package com.example.wishlist.repositories;
 
-
 import com.example.wishlist.models.Wish;
 
 import java.sql.*;
@@ -10,7 +9,6 @@ public class WishHandler {
     private Connection con;
     private Statement stmt;
     private String sqlString;
-    private ResultSet rs;
 
     public WishHandler(){
         connect();
@@ -94,7 +92,6 @@ public class WishHandler {
         //kun lave tables, ikke schema
         //JDBC:mysql://URL:3306/databaseNavn
         //mysql://qfaq4ga0w47q0kof:fubkr4yeaamcpzrn@ilzyz0heng1bygi8.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/vkeg9sp1dznzifg5
-
 
         try {
             con = DriverManager.getConnection(url,"qfaq4ga0w47q0kof","fubkr4yeaamcpzrn");

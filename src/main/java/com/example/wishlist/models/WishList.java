@@ -4,10 +4,10 @@ public class WishList {
 
     private String name;
     private String userEmail;
-    private int Id;
+    private int id;
 
     public WishList(int id, String name, String userEmail) {
-        this.Id = id;
+        this.id = id;
         this.name = name;
         this.userEmail = userEmail;
     }

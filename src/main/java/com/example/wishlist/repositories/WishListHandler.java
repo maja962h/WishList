@@ -1,7 +1,6 @@
 package com.example.wishlist.repositories;
 
 import com.example.wishlist.models.WishList;
-
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -10,7 +9,6 @@ public class WishListHandler {
     private Connection con;
     private Statement stmt;
     private String sqlString;
-    private ResultSet rs;
 
     public WishListHandler(){
         connect();
