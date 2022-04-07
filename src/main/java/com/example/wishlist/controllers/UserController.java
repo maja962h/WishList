@@ -8,7 +8,8 @@ import org.springframework.web.context.request.WebRequest;
 
 @Controller
 public class UserController {
-    UserService userService = new UserService();
+
+    private UserService userService = new UserService();
 
     @PostMapping("/logOn")
     public String logOn(WebRequest dataFromForm){
@@ -20,7 +21,6 @@ public class UserController {
         }
         return "redirect:/logIn";
     }
-
 
     @PostMapping("/createUser")
     public String userCreation(WebRequest dataFromForm){
