@@ -25,7 +25,7 @@ public class WishHandler {
         try
         {
             stmt = con.createStatement();
-            sqlString = ("INSERT INTO `vkeg9sp1dznzifg5`.`wish` (`wish_name`, `wish_price`, `wish_description` , `Wishlist_id`) " +
+            sqlString = ("INSERT INTO `vkeg9sp1dznzifg5`.`wish` (`wish_name`, `wish_price`, `wish_description` , `wishlist_id`) " +
                     "VALUES ('" + name + "','" + price + "','" + description + "','" + wishListId + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
