@@ -23,7 +23,7 @@ public class UserHandler {
         try
         {
             stmt = con.createStatement();
-            sqlString = ("INSERT INTO `you_wish`.`Users` (`user_email`, `user_password`, `user_name`) " +
+            sqlString = ("INSERT INTO `vkeg9sp1dznzifg5`.`users` (`user_email`, `user_password`, `user_name`) " +
                     "VALUES ('" + email + "', '" + password + "', '" + name + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
@@ -37,7 +37,7 @@ public class UserHandler {
     public void updateUserName(String email, String name){
         try {
             stmt = con.createStatement();
-            sqlString = ("UPDATE `you_wish`.`Users` SET `user_name` =  '" + name + "' WHERE (`user_email` = '" + email + "')");
+            sqlString = ("UPDATE `vkeg9sp1dznzifg5`.`users` SET `user_name` =  '" + name + "' WHERE (`user_email` = '" + email + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
         }
@@ -49,7 +49,7 @@ public class UserHandler {
     public void updateUserPassword(String email, String password){
         try {
             stmt = con.createStatement();
-            sqlString = ("UPDATE `you_wish`.`Users` SET `user_password` =  '" + password + "' WHERE (`user_email` = '" + email + "')");
+            sqlString = ("UPDATE `vkeg9sp1dznzifg5`.`users` SET `user_password` =  '" + password + "' WHERE (`user_email` = '" + email + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
         }
@@ -61,9 +61,10 @@ public class UserHandler {
     public void deleteUser(String email){
         try {
             stmt = con.createStatement();
-            sqlString = ("DELETE FROM `you_wish`.`Users` WHERE (`user_email` = '" + email + "')");
+            sqlString = ("DELETE FROM `vkeg9sp1dznzifg5`.`users` WHERE (`user_email` = '" + email + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
+
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -79,7 +80,7 @@ public class UserHandler {
 
         try{
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            String sqlString = "SELECT * FROM users WHERE `user_email`= '" + email + "' AND `user_password`='" + password + "';";
+            String sqlString = "SELECT * FROM vkeg9sp1dznzifg5.users WHERE `user_email`= '" + email + "' AND `user_password`='" + password + "';";
             ResultSet rsVerify = stmt.executeQuery(sqlString);
 
             while (rsVerify.next()) {

@@ -23,7 +23,7 @@ public class WishListHandler {
         try
         {
             stmt = con.createStatement();
-            sqlString = ("INSERT INTO `you_wish`.`wishList` (`wishlist_name`, `user_email`) " +
+            sqlString = ("INSERT INTO `vkeg9sp1dznzifg5`.`wishlist` (`wishlist_name`, `user_email`) " +
                     "VALUES ('" + name + "', '" + email + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
@@ -37,7 +37,7 @@ public class WishListHandler {
     public void updateWishListName(String name, int wishListId){
         try {
             stmt = con.createStatement();
-            sqlString = ("UPDATE `you_wish`.`wishList` SET `wishList_name` =  '" + name + "' WHERE (`wishList_id` = '" + wishListId + "')");
+            sqlString = ("UPDATE `vkeg9sp1dznzifg5`.`wishlist` SET `wishList_name` =  '" + name + "' WHERE (`wishlist_id` = '" + wishListId + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
         }
@@ -49,7 +49,7 @@ public class WishListHandler {
     public void deleteWishList(int wishListID){
         try {
             stmt = con.createStatement();
-            sqlString = ("DELETE FROM `you_wish`.`wishList` WHERE (`wishList_id` = '" + wishListID + "')");
+            sqlString = ("DELETE FROM `vkeg9sp1dznzifg5`.`wishlist` WHERE (`wishlist_id` = '" + wishListID + "')");
             stmt.executeUpdate(sqlString);
             System.out.println(sqlString);
         }
