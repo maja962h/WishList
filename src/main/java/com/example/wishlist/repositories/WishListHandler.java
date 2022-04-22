@@ -1,7 +1,6 @@
 package com.example.wishlist.repositories;
 
 import com.example.wishlist.models.WishList;
-
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -10,7 +9,6 @@ public class WishListHandler {
     private Connection con;
     private Statement stmt;
     private String sqlString;
-    private ResultSet rs;
 
     public WishListHandler(){
         connect();
@@ -59,24 +57,24 @@ public class WishListHandler {
 
     }
 
-    public ArrayList<String> fetchOneUsersWishlist(String email){
-        ArrayList<String> allWishlists = new ArrayList<>();
-        String id = "";
+    public ArrayList<WishList> fetchOneUsersWishlist(){
+        ArrayList<WishList> allWishlists = new ArrayList<>();
+        int id = 0;
         String name = "";
+        String email = "";
 
         try {
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-            sqlString = "SELECT `user_email`, `wishlist_id` FROM `Wishlist` WHERE (`user_email` = '" + email + "')";
+            sqlString = "SELECT * FROM `Wishlist`";
 
             ResultSet allEmailResultSet = stmt.executeQuery(sqlString);
             while(allEmailResultSet.next()){
-                id = allEmailResultSet.getString(1);
+                id = Integer.parseInt(allEmailResultSet.getString(1));
                 name = allEmailResultSet.getString(2);
                 email = allEmailResultSet.getString(3);
-                allWishlists.add(id);
-                allWishlists.add(name);
-                allWishlists.add(email);
+                WishList wishlist = new WishList(id, name, email);
+                allWishlists.add(wishlist);
             }
 
         } catch (SQLException e) {

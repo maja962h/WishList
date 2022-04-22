@@ -5,7 +5,7 @@ import com.example.wishlist.repositories.UserHandler;
 
 public class UserService {
 
-    UserHandler userHandler = new UserHandler();
+    private UserHandler userHandler = new UserHandler();
 
     public void createUser(User user){
         userHandler.createUser(user);

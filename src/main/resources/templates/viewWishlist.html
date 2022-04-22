@@ -8,18 +8,12 @@
 <body>
 <div class="content">
     <div class="heading">
-        <h1>View your Wish Lists</h1>
+        <h1>View Wish Lists</h1>
     </div>
     <div class="center">
-        <h3>
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email">
-            <input type="submit" th:value="view">
-        </h3>
         <p th:each="email : ${singleWishlist}">
             <span th:text="${email}"></span>
         </p>
-
     </div>
 </div>
 </body>

@@ -22,23 +22,11 @@ public class Wish {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getWishName() {
         return wishName;
     }
 
-    public void setWishName(String wishName) {
-        this.wishName = wishName;
-    }
-
     public int getPrice() {
         return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 }
